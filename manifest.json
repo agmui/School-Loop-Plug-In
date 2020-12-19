@@ -1,0 +1,20 @@
+{
+
+    "manifest_version": 2,
+    "name": "School-Loop-Plugin",
+    "version": "1.0",
+  
+    "description": " adds feature to school loop",
+  
+    "icons": {
+      "48": "assets/icon.png"
+    },
+  
+    "content_scripts": [
+      {
+        "matches": ["*://*.schoolloop.com/portal/student_home"],
+        "js": ["School-Loop-Plugin.js"]
+      }
+    ]
+  
+  }
