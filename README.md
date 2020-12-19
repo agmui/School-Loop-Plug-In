@@ -1,2 +1,3 @@
 # School-Loop-Plugin
- adds feature to school loop
+
+adds feature to school loop
