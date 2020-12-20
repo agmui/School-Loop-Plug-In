@@ -1,0 +1,17 @@
+ /*Here, all <p> elements on the page will be red*/
+p { 
+    text-align: center;
+    color: red;
+  }
+
+  /*In this example all HTML elements with class="page_title" will be red and center-aligned*/
+.page_title {
+    color: red;
+  }
+
+  /*In this example only <p> elements with class="center" will be center-aligned*/
+  p.center {
+    text-align: center;
+    color: red;
+  }
+  
