@@ -13,27 +13,23 @@ function getAssignmentInfo(index) {
 }
 
 function reOrder(temp) {
-    /*divOne = document.getElementById('#div1');
-    divTwo = document.getElementById('#div2');
-    divThree = document.getElementById('#div3');
-    container = divOne.parentNode;
-    container.appendChild(divTwo);
-    container.appendChild(divOne);
-    container.appendChild(divThree);*/
+    let help = [];
+    for (i = 0; i < getAssignments().length; i++) {
+      help.push(getAssignments()[i]);
+    }    
+    console.log(help);
 
     container = getAssignments()[0].parentNode;
     temp.forEach(n => {
-      console.log(getSchoolClass(n), n);
-      container.appendChild(getAssignments()[n]);
+      console.log(getAssignmentInfo(n), n);
+      container.appendChild(help[n]);
     });
 }
 
 
-
-
 let myArray = [];
 for (i = 0; i < getAssignments().length; i++) {
-    myArray.push([getSchoolClass(i), i]);
+    myArray.push([getAssignmentInfo(i), i]);
 }
 console.log(myArray)
 
@@ -41,5 +37,5 @@ let temp = []
 for (i = 0; i < getAssignments().length; i++) {
    temp.push(myArray.sort()[i][1]);
 }
-//console.log(temp)
+console.log(temp)
 reOrder(temp);
