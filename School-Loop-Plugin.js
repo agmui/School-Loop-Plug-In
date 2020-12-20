@@ -4,38 +4,32 @@ function getAssignments() {
     return assignments;
 }
 
-function getAssignmentInfo(index) {
-    const table = getAssignments()[index].getElementsByClassName("table_basic")[0];
+function getAssignmentInfo(assignment) {
+    const table = assignment.getElementsByClassName("table_basic")[0];
     let className = table.rows[0].cells[4].innerText;
     let dueDate = table.rows[0].cells[5].innerText;
 
     return className + " " + dueDate;
 }
 
-function reOrder(temp) {
-    let help = [];
-    for (i = 0; i < getAssignments().length; i++) {
-      help.push(getAssignments()[i]);
-    }    
-    console.log(help);
+function compare(assignment1, assignment2) {
+    if (getAssignmentInfo(assignment1) < getAssignmentInfo(assignment2)) {
+        return -1;
+    } else if (getAssignmentInfo(assignment1) > getAssignmentInfo(assignment2)) {
+        return 1;
+    } else {
+        return 0;
+    }
+}
 
-    container = getAssignments()[0].parentNode;
-    temp.forEach(n => {
-      console.log(getAssignmentInfo(n), n);
-      container.appendChild(help[n]);
+function reOrder() {
+    let container = getAssignments()[0].parentNode;
+    let sortedArray = Array.from(getAssignments()).sort(compare);
+
+    sortedArray.forEach(item => {
+        container.appendChild(item);
     });
 }
 
+reOrder();
 
-let myArray = [];
-for (i = 0; i < getAssignments().length; i++) {
-    myArray.push([getAssignmentInfo(i), i]);
-}
-console.log(myArray)
-
-let temp = []
-for (i = 0; i < getAssignments().length; i++) {
-   temp.push(myArray.sort()[i][1]);
-}
-console.log(temp)
-reOrder(temp);
