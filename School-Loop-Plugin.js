@@ -31,11 +31,10 @@ function reOrder() {
   container.appendChild(divTwo);
   container.appendChild(divOne);
   container.appendChild(divThree);*/
-
+  var assignmentContainer = document.querySelectorAll("[data-track-container='Active Assignments']")[0];
+  var assignments = assignmentContainer.getElementsByClassName("content")[0].getElementsByClassName("ajax_accordion");
   let help = []
   for (let i = 0; i < getNumberOfAssignments(); i++) {
-    var assignmentContainer = document.querySelectorAll("[data-track-container='Active Assignments']")[0];
-    var assignments = assignmentContainer.getElementsByClassName("content")[0].getElementsByClassName("ajax_accordion");
     help[i] = assignments[i];
   }
   container = help[0].parentNode;
