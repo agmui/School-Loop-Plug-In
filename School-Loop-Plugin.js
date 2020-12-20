@@ -1,11 +1,11 @@
 function getAssignments() {
     const assignmentContainer = document.querySelector("[data-track-container='Active Assignments']");
-    let assignments = assignmentContainer.getElementsByClassName("content")[0].getElementsByClassName("ajax_accordion");
+    let assignments = assignmentContainer.getElementsByClassName("ajax_accordion");
     return assignments;
 }
 
 function getAssignmentInfo(index) {
-    let table = getAssignments()[index].getElementsByClassName("table_basic")[0];
+    const table = getAssignments()[index].getElementsByClassName("table_basic")[0];
     let className = table.rows[0].cells[4].innerText;
     let dueDate = table.rows[0].cells[5].innerText;
 
