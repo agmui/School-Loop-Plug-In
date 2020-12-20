@@ -4,11 +4,12 @@ function getAssignments() {
     return assignments;
 }
 
-function getSchoolClass(x) {
-    var table = getAssignments()[x].getElementsByClassName("ajax_accordion_row jsTrackerRefresh")[0].getElementsByClassName("table_basic")[0];
-    var schoolClass = table.getElementsByClassName("column padding_5")[3].innerText;
-    var dueDate = table.getElementsByClassName("column padding_5")[4].innerText;
-    return schoolClass + ' ' + dueDate;
+function getAssignmentInfo(index) {
+    let table = getAssignments()[index].getElementsByClassName("table_basic")[0];
+    let className = table.rows[0].cells[4].innerText;
+    let dueDate = table.rows[0].cells[5].innerText;
+
+    return className + " " + dueDate;
 }
 
 function reOrder(temp) {
