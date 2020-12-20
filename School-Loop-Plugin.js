@@ -1,7 +1,6 @@
 function getAssignments() {
     const assignmentContainer = document.querySelector("[data-track-container='Active Assignments']");
     let assignments = assignmentContainer.getElementsByClassName("content")[0].getElementsByClassName("ajax_accordion");
-
     return assignments;
 }
 
@@ -12,7 +11,7 @@ function getSchoolClass(x) {
     return schoolClass + ' ' + dueDate;
 }
 
-function reOrder() {
+function reOrder(temp) {
     /*divOne = document.getElementById('#div1');
     divTwo = document.getElementById('#div2');
     divThree = document.getElementById('#div3');
@@ -21,21 +20,25 @@ function reOrder() {
     container.appendChild(divOne);
     container.appendChild(divThree);*/
 
-    let help = [];
-    for (i = 0; i < getAssignments().length; i++) {
-        help[i] = getAssignments()[i];
-    }
-
-    container = help[0].parentNode;
-    for (i = 0; i < getAssignments().length; i++){
-        container.appendChild(help[i]);
-    }
+    container = getAssignments()[0].parentNode;
+    temp.forEach(n => {
+      console.log(getSchoolClass(n), n);
+      container.appendChild(getAssignments()[n]);
+    });
 }
+
+
+
 
 let myArray = [];
 for (i = 0; i < getAssignments().length; i++) {
-    myArray.push(getSchoolClass(i));
+    myArray.push([getSchoolClass(i), i]);
 }
+console.log(myArray)
 
-console.log(myArray.sort());
-reOrder();
+let temp = []
+for (i = 0; i < getAssignments().length; i++) {
+   temp.push(myArray.sort()[i][1]);
+}
+//console.log(temp)
+reOrder(temp);
