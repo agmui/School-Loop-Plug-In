@@ -6,9 +6,9 @@ function getAssignments() {
 }
 
 function getSchoolClass(x) {
-    var table = getAssignments()[x].getElementsByClassName("ajax_accordion_row jsTrackerRefresh")[0].getElementsByClassName("table_basic")[0]
-    var schoolClass = table.getElementsByClassName("column padding_5")[3].innerText
-    var dueDate = table.getElementsByClassName("column padding_5")[4].innerText
+    var table = getAssignments()[x].getElementsByClassName("ajax_accordion_row jsTrackerRefresh")[0].getElementsByClassName("table_basic")[0];
+    var schoolClass = table.getElementsByClassName("column padding_5")[3].innerText;
+    var dueDate = table.getElementsByClassName("column padding_5")[4].innerText;
     return schoolClass + ' ' + dueDate;
 }
 
@@ -21,7 +21,7 @@ function reOrder() {
     container.appendChild(divOne);
     container.appendChild(divThree);*/
 
-    let help = []
+    let help = [];
     for (i = 0; i < getAssignments().length; i++) {
         help[i] = getAssignments()[i];
     }
@@ -32,10 +32,10 @@ function reOrder() {
     }
 }
 
-let myArray = []
+let myArray = [];
 for (i = 0; i < getAssignments().length; i++) {
     myArray.push(getSchoolClass(i));
 }
 
 console.log(myArray.sort());
-reOrder()
+reOrder();
