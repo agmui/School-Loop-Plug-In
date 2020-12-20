@@ -13,7 +13,8 @@
     "content_scripts": [
       {
         "matches": ["*://*.schoolloop.com/portal/student_home"],
-        "js": ["School-Loop-Plugin.js"]
+        "js": ["School-Loop-Plugin.js"],
+        "css": ["help.css"]
       }
     ]
   
