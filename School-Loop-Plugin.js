@@ -1,21 +1,34 @@
+class Assignment {
+
+    static container = document.querySelector("[data-track-container='Active Assignments']").getElementsByClassName("content")[0];
+
+    constructor(index) {
+        this.accordion = Assignment.container.getElementsByClassName("ajax_accordion")[index];
+        this.table = this.accordion.getElementsByClassName("table_basic")[0];
+    }
+
+    name() {
+        return this.table.rows[0].cells[3].innerText;
+    }
+
+    className() {
+        return this.table.rows[0].cells[4].innerText;
+    }
+
+    dueDate() {
+        return this.table.rows[0].cells[5].innerText;
+    }
+}
+
 function getAssignments() {
-    const assignmentContainer = document.querySelector("[data-track-container='Active Assignments']");
-    let assignments = assignmentContainer.getElementsByClassName("ajax_accordion");
-    return assignments;
+    // Sexy one-liner
+    return Array(Assignment.container.childElementCount).fill().map((_, i) => new Assignment(i));
 }
 
-function getAssignmentInfo(assignment) {
-    const table = assignment.getElementsByClassName("table_basic")[0];
-    let className = table.rows[0].cells[4].innerText;
-    let dueDate = table.rows[0].cells[5].innerText;
-
-    return className + " " + dueDate;
-}
-
-function compare(assignment1, assignment2) {
-    if (getAssignmentInfo(assignment1) < getAssignmentInfo(assignment2)) {
+function compareClassNames(assignment1, assignment2) {
+    if (assignment1.className() < assignment2.className()) {
         return -1;
-    } else if (getAssignmentInfo(assignment1) > getAssignmentInfo(assignment2)) {
+    } else if (assignment1.className() > assignment2.className()) {
         return 1;
     } else {
         return 0;
@@ -23,13 +36,9 @@ function compare(assignment1, assignment2) {
 }
 
 function reOrder() {
-    let container = getAssignments()[0].parentNode;
-    let sortedArray = Array.from(getAssignments()).sort(compare);
-
-    sortedArray.forEach(item => {
-        container.appendChild(item);
+    getAssignments().sort(compareClassNames).forEach(item => {
+        Assignment.container.appendChild(item.accordion);
     });
 }
 
 reOrder();
-
