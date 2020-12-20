@@ -4,19 +4,22 @@ class Assignment {
 
     constructor(index) {
         this.accordion = Assignment.container.getElementsByClassName("ajax_accordion")[index];
-        this.table = this.accordion.getElementsByClassName("table_basic")[0];
+    }
+
+    table() {
+        return this.accordion.getElementsByClassName("table_basic")[0];
     }
 
     name() {
-        return this.table.rows[0].cells[3].innerText;
+        return this.table().rows[0].cells[3].innerText;
     }
 
     className() {
-        return this.table.rows[0].cells[4].innerText;
+        return this.table().rows[0].cells[4].innerText;
     }
 
     dueDate() {
-        return this.table.rows[0].cells[5].innerText;
+        return this.table().rows[0].cells[5].innerText;
     }
 }
 
