@@ -1,10 +1,28 @@
 body { 
   background: url(assets/background.png) !important;
   background-size: 50% 25% !important;
-  background-repeat: no-repeat;
+  /*background-repeat: no-repeat;*/
   border: 10px solid black;
 }
 
-#container_header_links {
+/*#container_header_links {
   background: green !important;
+}*/
+
+#container_header_links {
+  background-color: red;
+  position: relative;
+  animation-name: example;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  /*animation: name duration timing-function delay iteration-count direction fill-mode;*/ /*use dis as a gude*/
+}
+
+
+@keyframes example {
+  0%   {background-color:red;}
+  25%  {background-color:yellow;}
+  50%  {background-color:blue;}
+  75%  {background-color:green;}
+  100% {background-color:red;}
 }
