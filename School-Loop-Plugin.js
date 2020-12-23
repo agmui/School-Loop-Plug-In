@@ -45,3 +45,9 @@ function reOrder() {
 }
 
 reOrder();
+
+function add_Border() {
+  document.getElementsByClassName("sub_header")[3].insertAdjacentHTML("afterend",
+  "<button>Add Stuff</button>");
+}
+add_Border()
