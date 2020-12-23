@@ -44,10 +44,18 @@ function reOrder() {
     });
 }
 
-reOrder();
+//reOrder(); turned off bc of butten
 
 function add_Border() {
-  document.getElementsByClassName("sub_header")[3].insertAdjacentHTML("afterend",
-  "<button>Add Stuff</button>");
+    //importing js
+    document.head.insertAdjacentHTML("afterbegin", "<script src=https://ahs-fusd-ca.schoolloop.com/portal/assets/background.png></script>");
+    //adding button
+    document.getElementsByClassName("sub_header")[3].insertAdjacentHTML("beforeend", "<button id = reOrderButton onclick=\"addCode()\">Reorder Classes</button>");
+    //inserting 4 borders
+    document.getElementById("container_page").insertAdjacentHTML("afterbegin", "<div id = rgbBorder1></div>")
+    document.getElementById("container_page").insertAdjacentHTML("afterbegin", "<div id = rgbBorder2></div>")
+    document.getElementById("container_page").insertAdjacentHTML("afterbegin", "<div id = rgbBorder3></div>")
+    document.getElementById("container_page").insertAdjacentHTML("afterbegin", "<div id = rgbBorder4></div>")
+
 }
 add_Border()
