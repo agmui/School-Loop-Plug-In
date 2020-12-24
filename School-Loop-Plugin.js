@@ -48,9 +48,11 @@ function reOrder() {
 
 function addBorder() {
     //importing js
-    document.head.insertAdjacentHTML("afterbegin", "<script src=https://ahs-fusd-ca.schoolloop.com/portal/assets/background.png></script>");
+    document.head.insertAdjacentHTML("afterbegin", "<script type=\"text/javascript\" src=School-Loop-Plugin.js></script>");
     //adding button
-    document.getElementsByClassName("sub_header")[3].insertAdjacentHTML("beforeend", "<button id = reOrderButton onclick=\"addCode()\">Reorder Classes</button>");
+    document.getElementsByClassName("sub_header")[3].insertAdjacentHTML("beforeend", "<button id=reOrderButton>Reorder Classes</button>");
+
+    document.getElementById("reOrderButton").addEventListener("click", reOrder);
     //inserting 4 borders
     document.getElementById("container_page").insertAdjacentHTML("afterbegin", "<div id = rgbBorder1></div>")
     document.getElementById("container_page").insertAdjacentHTML("afterbegin", "<div id = rgbBorder2></div>")
@@ -58,4 +60,5 @@ function addBorder() {
     document.getElementById("container_page").insertAdjacentHTML("afterbegin", "<div id = rgbBorder4></div>")
 
 }
-addBorder()
+
+addBorder();
