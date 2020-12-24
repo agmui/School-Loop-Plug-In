@@ -2,7 +2,10 @@ body {
   background: url(assets/background.png) !important;
   background-size: 50% 25% !important;
   /*background-repeat: no-repeat;*/
-  border: 10px solid black;
+  /*border: 10px solid black;*/
+  animation-name: hello;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
 }
 
 /*#container_header_links {
@@ -25,6 +28,14 @@ body {
   50%  {background-color:blue;}
   75%  {background-color:green;}
   100% {background-color:red;}
+}
+
+@keyframes hello {
+  0%   {border:10px solid red;}
+  25%  {border:10px solid yellow;}
+  50%  {border:10px solid blue;}
+  75%  {border:10px solid green;}
+  100% {border:10px solid red;}
 }
 
 #rgbBorder1 {
