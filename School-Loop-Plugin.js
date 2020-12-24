@@ -46,7 +46,7 @@ function reOrder() {
 
 //reOrder(); turned off bc of butten
 
-function add_Border() {
+function addBorder() {
     //importing js
     document.head.insertAdjacentHTML("afterbegin", "<script src=https://ahs-fusd-ca.schoolloop.com/portal/assets/background.png></script>");
     //adding button
@@ -58,4 +58,4 @@ function add_Border() {
     document.getElementById("container_page").insertAdjacentHTML("afterbegin", "<div id = rgbBorder4></div>")
 
 }
-add_Border()
+addBorder()
