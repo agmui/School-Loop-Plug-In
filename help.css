@@ -13,7 +13,7 @@ body {
 }*/
 
 #container_header_links {
-  background-color: red;
+  background: red;
   position: relative;
   animation-name: example;
   animation-duration: 4s;
@@ -39,10 +39,27 @@ body {
 }
 
 #rgbBorder1 {
-  background-color: lightgrey;
-  width: 300px;
-  padding: 50px;
-  margin: 20px;
+  font-size: 10vw;
+  width: 100vw;
+  margin-top: calc(50vh - 10vw);
+  background: linear-gradient(
+    60deg,
+    rgb(255, 38, 0) 10%,
+    hsl(20, 75%, 50%) 25%,
+    hsl(50, 75%, 50%) 40%,
+    hsl(130, 75%, 50%) 55%,
+    hsl(200, 75%, 50%) 70%,
+    hsl(260, 75%, 50%) 85%,
+    rgb(255, 38, 0) 95%
+  );
+
+    -webkit-text-fill-color: transparent;
+    animation: 10s BeProud linear infinite,
+    3s Always ease alternate infinite;
+}
+
+@keyframes BeProud {
+  100% { background-position: 100vw 0px; }
 }
 #rgbBorder2 {
   background-color: lightgrey;
@@ -100,42 +117,4 @@ body {
   box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
   color: #fff;
   transform: translateY(-14px);
-}
-
-#rgbBorder1 {
-	/*font-family: 'Bowlby One SC', cursive;
-	font-size: 10vw;*/
-	width: 100vw;
-	margin-top: calc(50vh - 10vw);
-	/*text-align: center;*/
-	border: linear-gradient(
-		60deg,
-		hsl(0, 75%, 50%) 10%,
-		hsl(20, 75%, 50%) 10%,
-		hsl(20, 75%, 50%) 25%,
-		hsl(50, 75%, 50%) 25%,
-		hsl(50, 75%, 50%) 40%,
-		hsl(130, 75%, 50%) 40%,
-		hsl(130, 75%, 50%) 55%,
-		hsl(200, 75%, 50%) 55%,
-		hsl(200, 75%, 50%) 70%,
-		hsl(260, 75%, 50%) 70%,
-		hsl(260, 75%, 50%) 85%,
-		hsl(0, 75%, 50%) 85%
-	);
-
-	text-shadow: 0.5px -0.6vw #fff4;
-	color: #fff;
-	-webkit-background-clip: text;
-   	-webkit-text-fill-color: transparent;
-   	animation: 10s BeProud linear infinite,
-   	3s Always ease alternate infinite;
-}
-
-@keyframes BeProud {
-	100% { background-position: 100vw 0px; }
-}
-
-@keyframes Always {
-	100% { transform: scale(1.1);}
 }

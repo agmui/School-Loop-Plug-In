@@ -54,7 +54,7 @@ function addBorder() {
 
     document.getElementById("reOrderButton").addEventListener("click", reOrder);
     //inserting 4 borders
-    document.getElementById("container_page").insertAdjacentHTML("afterbegin", "<div id = rgbBorder1></div>")
+    document.getElementById("container_page").insertAdjacentHTML("afterbegin", "<div id = rgbBorder1>ignore</div>")
     document.getElementById("container_page").insertAdjacentHTML("afterbegin", "<div id = rgbBorder2></div>")
     document.getElementById("container_page").insertAdjacentHTML("afterbegin", "<div id = rgbBorder3></div>")
     document.getElementById("container_page").insertAdjacentHTML("afterbegin", "<div id = rgbBorder4></div>")
